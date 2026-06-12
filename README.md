@@ -41,7 +41,7 @@ Materia: Lenguajes de Programación | Periodo: 2026-1 | Estado: Completado
 ### Instalación
 
 ```bash
-git clone EDIT_REPO_URL
+git clone https://github.com/raulgaray26/prolog-game.git
 cd prolog-game
 composer install
 cp .env.example .env
