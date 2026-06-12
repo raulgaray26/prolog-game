@@ -6,6 +6,16 @@ Materia: Lenguajes de Programación | Periodo: 2026-1 | Estado: Completado
 
 - [Raúl Alejandro Garay Vinueza](https://github.com/raulgaray26)
 
+## Capturas de Pantalla (Demo)
+![Vista Principal](/docs/screenshots/vista_principal.png)
+![Consultas](/docs/screenshots/consultas_disponibles_1.png)
+![Consultas](/docs/screenshots/consultas_disponibles_2.png)
+![Listado](/docs/screenshots/listado_personajes.png)
+![Regla](/docs/screenshots/regla_nueva_1.png)
+![Regla](/docs/screenshots/regla_nueva_2.png)
+![Regla](/docs/screenshots/regla_nueva_3.png)
+![Regla](/docs/screenshots/regla_nueva_4.png)
+
 ## Funcionalidad
 
 - [x] Base de conocimiento extendida en Prolog: personajes, misiones, enemigos, inventarios y 4 reglas nuevas [Commit](https://github.com/raulgaray26/prolog-game/commit/52c753a67d40647d700b60a09b420fcc82fb1f7b)
