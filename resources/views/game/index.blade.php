@@ -29,7 +29,7 @@
         .btn-run       { background: var(--accent); border-color: var(--accent); color: #fff; }
         .btn-run:hover { background: #c73652; border-color: #c73652; color: #fff; }
         .result-line   { padding: 6px 12px; border-bottom: 1px solid var(--border);
-                         font-family: 'Courier New', monospace; font-size: .88rem; }
+                         font-family: 'Courier New', monospace; font-size: .88rem; color: var(--text);}
         .result-line:last-child          { border-bottom: none; }
         .result-line:nth-child(odd)      { background: rgba(255,255,255,.02); }
         .form-label    { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
