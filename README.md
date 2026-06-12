@@ -1,58 +1,60 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistema de Consultas Prolog — Juego de Roles
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Materia: Lenguajes de Programación | Periodo: 2026-1 | Estado: Completado
 
-## About Laravel
+## Equipo de trabajo
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Raúl Alejandro Garay Vinueza](https://github.com/raulgaray26)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Funcionalidad
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [x] Base de conocimiento extendida en Prolog: personajes, misiones, enemigos, inventarios y 4 reglas nuevas [Commit](https://github.com/raulgaray26/prolog-game/commit/52c753a67d40647d700b60a09b420fcc82fb1f7b)
+- [x] `PrologService`: puente PHP → `swipl` para ejecutar goals directamente desde Laravel [Commit](https://github.com/raulgaray26/prolog-game/commit/77ec5018d332512579aabb510126632e0d1acbd3)
+- [x] Interfaz web con 15 tipos de consulta interactivas agrupadas por categoría [Commit](https://github.com/raulgaray26/prolog-game/commit/c5168efdcefbba81ba22f244167b08501223a6e5)
 
-## Learning Laravel
+## Tecnologías
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+`PHP` | `Laravel` | `SWI-Prolog` | `Bootstrap 5` | `Blade Templates`
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Ejecución
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Prerequisitos
 
-## Agentic Development
+- PHP >= 8.2 con la función `exec()` habilitada
+- [Composer](https://getcomposer.org/)
+- SWI-Prolog instalado y `swipl` disponible en PATH:
+  - **Ubuntu/Debian:** `sudo apt install swi-prolog`
+  - **macOS:** `brew install swi-prolog`
+  - **Windows:** [swi-prolog.org/download/stable](https://www.swi-prolog.org/download/stable)
+- Git
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Instalación
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone EDIT_REPO_URL
+cd prolog-game
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan serve
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Abre `http://localhost:8000` en el navegador.
 
-## Contributing
+> **Verificar swipl:** ejecuta `swipl --version` en la terminal. Si el comando no se reconoce, revisa la instalación o añade la ruta al PATH del sistema.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Métricas de Progreso
 
-## Code of Conduct
+| Indicador | Valor |
+|---|---|
+| Commits totales | 8 |
+| Issues/PRs fusionados | 3 / 5 |
+| Cobertura de pruebas | N/A |
+| Última actualización | 2026-06-12 |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Reflexión y Aprendizajes
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Habilidades desarrolladas:** Integración del paradigma lógico (Prolog) con el paradigma web (Laravel MVC); diseño de servicios desacoplados en PHP; comunicación inter-proceso mediante.
+- **Qué funcionó bien:** Separar toda la lógica de Prolog en `PrologService` permitió agregar nuevas consultas sin tocar la vista ni el controlador. Usar if-then-else dentro de los goals garantiza siempre una respuesta legible, aunque el predicado falle.
+- **Qué se podría mejorar:** sería mejor una conexión persistente a SWI-Prolog. También falta validación de entrada para prevenir inyección de código Prolog malicioso.
+- **Conceptos clave aplicados de la materia:** Unificación y backtracking; reglas recursivas; operadores relacionales; procesamiento de listas con `findall/3` y `forall/2`; if-then-else en Prolog; integración de paradigmas lógico y orientado a objetos.
